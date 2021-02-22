@@ -19,7 +19,7 @@ pipeline {
         stage('Building ML Image') {
             steps{
                 script{
-                    dockerImageTag="$dockerImageRepo"+":"+"2.1.1"
+                    dockerImageTag="$dockerImageRepo"+":"+"$RELESE_VERSION"
                     echo "Created a Tag for uploading an Image to Registry based on Build_Number : $dockerImageTag"
                     dockerImage = docker.build "${dockerImageTag}"
                     echo "$dockerImage"
