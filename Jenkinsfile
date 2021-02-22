@@ -1,9 +1,11 @@
 #! groovy
 
-def dockerImageRepo = 'registry.us.se.com/epam/product-machine-learning-pipeline'
+//def dockerImageRepo = 'registry.us.se.com/epam/product-machine-learning-pipeline'
+def dockerImageRepo = 'hub.docker.com/epamt/product-machine-learning-pipeline'
 def dockerImageTag
 def dockerImage
-def dockerRegistry = 'registry.us.se.com'
+//def dockerRegistry = 'registry.us.se.com'
+def dockerRegistry = 'hub.docker.com'
 
 pipeline {
     agent any
@@ -30,6 +32,8 @@ pipeline {
            steps{
                script{
                     echo "Pushing the ML docker image"
+                    sh 'docker login --username="anandgit71" --password="anandgit12" ${dockerRegistry}'
+					dockerImage.push()
                }
            }
         }
