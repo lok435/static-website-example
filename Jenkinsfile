@@ -40,7 +40,8 @@ pipeline {
     }
     post {
         always {
-        		sh 'docker rmi $dockerImage'
+        		// sh 'docker rmi $dockerImage'
+                sh 'docker rmi $(docker images -qf "dangling=true")'
                 sh 'docker logout hub.docker.com'
                 deleteDir()
             }
