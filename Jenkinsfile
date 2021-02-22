@@ -40,7 +40,7 @@ pipeline {
     }
     post {
         always {
-        		sh 'docker rm $dockerImage'
+        		sh 'docker rmi $dockerImage'
                 sh 'docker logout hub.docker.com'
                 deleteDir()
             }
