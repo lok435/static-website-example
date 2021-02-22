@@ -19,6 +19,9 @@ pipeline {
                 script{
                     dockerImageTag="$dockerImageRepo"+":"+"2.1.1"
                     echo "Created a Tag for uploading an Image to Registry based on Build_Number : $dockerImageTag"
+                    dockerImage = docker.build "${dockerImageTag}"
+                    echo "$dockerImage"
+                    sh "docker images"
                 }
             }
             
