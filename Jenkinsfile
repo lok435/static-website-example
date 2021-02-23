@@ -42,7 +42,6 @@ pipeline {
         success{
             script{
                 sh 'docker rmi -f ${dockerImageTag}'
-                sh 'docker rmi $(docker images -f dangling=true -q)'
                 }
             }
         }
