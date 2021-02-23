@@ -39,11 +39,18 @@ pipeline {
         }
     }
     post {
-        always {
-        		sh 'docker rmi -f $dockerImage'
-                sh 'docker rmi $(docker images -qf "dangling=true")'
-                sh 'docker logout hub.docker.com'
-                deleteDir()
+        success{
+            script{
+                sh 'docker rmi -f ${dockerImageTag}'
+                sh 'docker rmi $(docker images -f dangling=true -q)'
+                }
             }
         }
+        // always {
+        // 		sh 'docker rmi -f $dockerImageTag'
+        //         sh 'docker rmi $(docker images -qf "dangling=true")'
+        //         sh 'docker logout hub.docker.com'
+        //         deleteDir()
+        //     }
+        // }
 }
