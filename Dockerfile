@@ -4,6 +4,8 @@ MAINTAINER Anand Reddy < anand@gmail.com >
 
 ENV workdir /var/www/html
 
+USER root
+
 RUN yum -y update && yum -y install httpd && rm -rf $workdir/*
 
 WORKDIR $workdir
