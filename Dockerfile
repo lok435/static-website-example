@@ -36,3 +36,7 @@ COPY . /usr/share/nginx/html
 # EXPOSE 80
 
 # ENTRYPOINT ["/usr/sbin/httpd", "-D", "FOREGROUND"]
+
+FROM httpd:latest
+RUN rm -rf /var/www/html/*
+COPY . /var/www/html/
