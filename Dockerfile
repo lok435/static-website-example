@@ -1,17 +1,19 @@
-FROM centos:latest
+FROM gauravkkk/static-web1
+ADD . /var/www/html
+# FROM centos:latest
 
-MAINTAINER Anand Reddy < anand@gmail.com >
+# MAINTAINER Anand Reddy < anand@gmail.com >
 
-ENV workdir /var/www/html
+# ENV workdir /var/www/html
 
-USER root
+# USER root
 
-RUN yum -y update && yum -y install httpd && rm -rf $workdir/*
+# RUN yum -y update && yum -y install httpd && rm -rf $workdir/*
 
-WORKDIR $workdir
+# WORKDIR $workdir
 
-COPY . $workdir
+# COPY . $workdir
 
-EXPOSE 80
+# EXPOSE 80
 
-ENTRYPOINT ["/usr/sbin/httpd", "-D", "FOREGROUND"]
+# ENTRYPOINT ["/usr/sbin/httpd", "-D", "FOREGROUND"]
