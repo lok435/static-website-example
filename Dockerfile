@@ -1,3 +1,6 @@
+###########################################
+#  Docker Image for OpenShift Deployment  #
+###########################################
 
 FROM httpd:latest
 RUN rm -rf /var/www/html/*
