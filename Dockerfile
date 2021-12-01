@@ -1,5 +1,5 @@
-FROM nginx
-COPY . /usr/share/nginx/html
+# FROM nginx
+# COPY . /usr/share/nginx/html
 
 # FROM centos:6
 # RUN yum -y install httpd && yum clean all
@@ -37,6 +37,6 @@ COPY . /usr/share/nginx/html
 
 # ENTRYPOINT ["/usr/sbin/httpd", "-D", "FOREGROUND"]
 
-# FROM httpd:latest
-# RUN rm -rf /var/www/html/*
-# COPY . /var/www/html/
+FROM httpd:latest
+RUN rm -rf /var/www/html/*
+COPY . /var/www/html/
