@@ -2,9 +2,17 @@
 #  Docker Image for OpenShift Deployment  #
 ###########################################
 
-FROM httpd:latest
-RUN rm -rf /var/www/html/*
-COPY . /var/www/html/
+FROM centos:7
+RUN yum install -y epel-release && \
+  yum install -y nginx
+COPY . /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/nginx.conf
+CMD /usr/sbin/nginx -g 'daemon off;'
+
+
+# FROM httpd:latest
+# RUN rm -rf /var/www/html/*
+# COPY . /var/www/html/
 
 ## Docker file for Static Application Deployment
 #
