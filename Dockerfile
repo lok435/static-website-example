@@ -4,7 +4,8 @@
 
 FROM centos:7
 RUN yum install -y epel-release && \
-  yum install -y nginx
+  yum install -y nginx && \
+  yum install -y nfs-utils nfs-utils-lib
 COPY . /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/nginx.conf
 CMD /usr/sbin/nginx -g 'daemon off;'
