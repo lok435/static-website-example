@@ -3,6 +3,7 @@
 ###########################################
 
 FROM centos:7
+USER root
 RUN yum install -y epel-release && \
   yum install -y nginx && \
   yum install -y nfs-utils nfs-utils-lib
