@@ -10,6 +10,7 @@ RUN yum install -y epel-release && \
   yum install -y nfs-utils nfs-utils-lib
 COPY . /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/nginx.conf
+RUN mount -t nfs 52.118.191.60:/anand /hh
 CMD /usr/sbin/nginx -g 'daemon off;'
 
 
