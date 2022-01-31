@@ -12,9 +12,9 @@ COPY . /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY script.sh service.sh /tmp/
 RUN chmod 755 /tmp/script.sh /tmp/service.sh
-CMD ["sh","-c","/usr/sbin/nginx -g 'daemon off;' && /bin/bash /tmp/script.sh & "]
-# CMD /tmp/service.sh
+CMD /tmp/service.sh
 # CMD /usr/sbin/nginx -g 'daemon off;'
+# CMD ["sh","-c","/usr/sbin/nginx -g 'daemon off;' && /bin/bash /tmp/script.sh & "]
 
 
 # FROM httpd:latest
