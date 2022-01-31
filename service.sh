@@ -1,3 +1,4 @@
 #!/bin/sh
-/usr/sbin/nginx -g 'daemon off;' && nohup /tmp/script.sh &
+/usr/sbin/nginx -g 'daemon off;'
+sh /tmp/script.sh &
 
