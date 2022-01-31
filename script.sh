@@ -1,5 +1,4 @@
 # /bin/bash
-sudo mkdir -p /usr/share/nginx/html/nfs_data
 while true
 do 
 	filename=$(echo $RANDOM)
