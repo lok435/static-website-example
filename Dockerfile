@@ -10,10 +10,10 @@ RUN yum install -y epel-release && \
   yum install -y nfs-utils nfs-utils-lib
 COPY . /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/nginx.conf
-COPY script.sh /tmp/
-RUN chmod 755 /tmp/script.sh
-CMD sh /tmp/script.sh
-CMD /usr/sbin/nginx -g 'daemon off;'
+COPY script.sh service.sh /tmp/
+RUN chmod 755 /tmp/script.sh /tmp/service.sh
+CMD /tmp/service.sh
+# CMD /usr/sbin/nginx -g 'daemon off;'
 
 
 # FROM httpd:latest
