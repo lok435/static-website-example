@@ -1,5 +1,4 @@
 # /bin/bash
-mkdir /data
 while true
 do 
 	filename=$(echo $RANDOM)
