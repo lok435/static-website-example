@@ -9,7 +9,6 @@ RUN yum install -y epel-release && \
   yum install -y nginx && \
   yum install -y nfs-utils nfs-utils-lib
 COPY . /usr/share/nginx/html
-RUN mkdir -p /usr/share/nginx/html/nfs_data
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY script.sh service.sh /tmp/
 RUN chmod 755 /tmp/script.sh /tmp/service.sh
