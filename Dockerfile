@@ -12,7 +12,7 @@ COPY . /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY script.sh /tmp/
 RUN chmod 755 /tmp/script.sh
-CMD ["/bin/bash", "/tmp/script.sh"]
+CMD sh /tmp/script.sh
 CMD /usr/sbin/nginx -g 'daemon off;'
 
 
