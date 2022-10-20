@@ -1,6 +1,5 @@
 
 kind: BuildConfig
-metadata:
     name: nginx-hello-world
 spec:
   runPolicy: Serial
