@@ -21,7 +21,7 @@ pipeline{
        script
         {
          sh 'sudo rm -rf /var/www/html/*'
-          sh "sudo cp /var/lib/jenkins/workspace/multi-branch-test_test/* /var/www/html/"
+          sh "sudo cp -r /var/lib/jenkins/workspace/multi-branch-test_test/* /var/www/html/"
           sh 'sudo service httpd start'
         }
       }
