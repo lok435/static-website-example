@@ -21,7 +21,7 @@ pipeline{
        script
         {
          sh 'sudo rm -rf /var/www/html/*'
-          sh 'echo deepu>>index.html'
+          sh "echo 'deepu'>>index.html"
           sh 'sudo service httpd start'
         }
       }
