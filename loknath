@@ -1,15 +1,1 @@
-#!groovy
-pipeline 
-stages
-{
-  stage("install_nginx")
-  {
-    step
-    {
-      script
-      {
-       sh 'sudo yum install nginx -y && sudo service nginx start'
-       }
-    } 
-  }   
-}
+abcdefghijknmoqrstuvwx 
