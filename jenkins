@@ -1,15 +1,15 @@
-pipeline {
-    agent
-     stages {
-        stage ('build'){
-            steps {
+pipeline{
+    anyagent
+     stages{
+        stage('build'){
+            steps{
                 sh 'echo "hello world"'
-                sh '''
-                echo "multiline shell script works too"
-                sh '''
+                sh''
+                echo "multiline shell"
+                sh ''
             }
 
         }
         
-    }
+     }
 }
