@@ -1,13 +1,12 @@
 # .jenkins
-pipeline{
+pipeline {
     agentany
-    stages{
-        stage('build'){
-            steps{
+    stages {
+        stage('build') {
+            steps {
                 sh 'echo "hello world"'
                 sh '''
-                echo "multiline shell script works too"
-                ls -lah
+                   echo "multiline shell script works too"
                 '''
 
             }
